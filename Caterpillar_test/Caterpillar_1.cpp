@@ -14,8 +14,8 @@ void recv_can(void){
         axis_data[i] -= 127;
     }
 
-    caterpillar_calc(axis_data,mtr_data);
-    motor_pwm_calc(mtr_data);
+    caterpillar_calc(&axis_data,&mtr_data);
+    motor_pwm_calc(&mtr_data);
 
     __HAL_TIM_SET_COMPARE(&htimX,TIM_CHANNELX,mtr_data[0] * motor_amp)
     __HAL_TIM_SET_COMPARE(&htimX,TIM_CHANNELX,mtr_data[0] * motor_amp)
