@@ -4,13 +4,15 @@ import tkinter as tk
 import tkinter.filedialog
 import os
 
+pic_path = tkinter.filedialog.askopenfilename(title="title")
+pic_name ,ext = os.path.splitext(os.path.basename(pic_path))
+output_pic_name = str(pic_name) + "_out.jpg"
+gray_pic_name = str(pic_name) + "_gray.jpg"
+
+img = cv2.imread(pic_path,cv2.IMREAD_UNCHANGED)
+
+
 def init_pic():
-    pic_path = tkinter.filedialog.askopenfilename(title="title")
-    pic_name ,ext = os.path.splitext(os.path.basename(pic_path))
-    output_pic_name = str(pic_name) + "_out.jpg"
-    gray_pic_name = str(pic_name) + "_gray.jpg"
-    
-    img = cv2.imread(pic_path,cv2.IMREAD_UNCHANGED)
     height, width = img.shape[:2]
     
     hsv = cv2.cvtColor(img,cv2.COLOR_BGR2HSV_FULL)
@@ -30,6 +32,9 @@ def init_pic():
     cv2.drawContours(img, contours, -1, color=(0, 0, 0), thickness=5)
     
     cv2.imwrite(output_pic_name,np.array(img))
+    
+    
+    #cv2.imshow('window', )
     #print(x,y)
     if not __debug__:
         print("input_path:{}".format(pic_name))
@@ -37,4 +42,7 @@ def init_pic():
     
     
 #main
-init_pic()
+def init():
+    init_pic()
+    
+cv2.imshow('window', img)
