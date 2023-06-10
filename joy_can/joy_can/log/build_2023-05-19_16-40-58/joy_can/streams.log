@@ -1,0 +1,37 @@
+[0.426s] Invoking command in '/home/kohki/HONROBO_WS/joy_can/joy_can': PYTHONPATH=/home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/prefix_override:/home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/joy_can build --build-base /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build install --record /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/install.log --single-version-externally-managed
+[0.586s] running egg_info
+[0.586s] creating build/joy_can/joy_can.egg-info
+[0.586s] writing build/joy_can/joy_can.egg-info/PKG-INFO
+[0.586s] writing dependency_links to build/joy_can/joy_can.egg-info/dependency_links.txt
+[0.586s] writing entry points to build/joy_can/joy_can.egg-info/entry_points.txt
+[0.587s] writing requirements to build/joy_can/joy_can.egg-info/requires.txt
+[0.587s] writing top-level names to build/joy_can/joy_can.egg-info/top_level.txt
+[0.587s] writing manifest file 'build/joy_can/joy_can.egg-info/SOURCES.txt'
+[0.588s] reading manifest file 'build/joy_can/joy_can.egg-info/SOURCES.txt'
+[0.589s] writing manifest file 'build/joy_can/joy_can.egg-info/SOURCES.txt'
+[0.589s] running build
+[0.589s] running build_py
+[0.589s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build
+[0.589s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib
+[0.589s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can
+[0.589s] copying joy_can/__init__.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can
+[0.589s] copying joy_can/joy_can.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can
+[0.590s] running install
+[0.590s] running install_lib
+[0.590s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can
+[0.590s] copying /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/__init__.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can
+[0.591s] copying /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/joy_can.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can
+[0.591s] byte-compiling /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/__init__.py to __init__.cpython-310.pyc
+[0.591s] byte-compiling /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/joy_can.py to joy_can.cpython-310.pyc
+[0.591s] running install_data
+[0.592s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/share/ament_index
+[0.592s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/share/ament_index/resource_index
+[0.592s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/share/ament_index/resource_index/packages
+[0.592s] copying resource/joy_can -> /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/share/ament_index/resource_index/packages
+[0.592s] copying package.xml -> /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/share/joy_can
+[0.592s] running install_egg_info
+[0.593s] Copying build/joy_can/joy_can.egg-info to /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can-0.0.0-py3.10.egg-info
+[0.594s] running install_scripts
+[0.607s] Installing joy_can script to /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/joy_can
+[0.607s] writing list of installed files to '/home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/install.log'
+[0.629s] Invoked command in '/home/kohki/HONROBO_WS/joy_can/joy_can' returned '0': PYTHONPATH=/home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/prefix_override:/home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/joy_can build --build-base /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build install --record /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/install.log --single-version-externally-managed
