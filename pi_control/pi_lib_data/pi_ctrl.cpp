@@ -1,12 +1,13 @@
 #include "pi_ctrl.hpp"
 
+
 //単位は(rad/s)
-float pid_class::pi_calc_rad(float current_rad, float terget_rad){
+float pid_class::pi_calc_rad(float current_rad){
     float result_p = 0, result_i = 0;
     float calc_p = 0;
     
     //計算
-    calc_p = terget_rad - current_rad;
+    calc_p = pid_class::current_target_rad - current_rad;
     integral += (calc_p + before_p) / 2.0f * DELTA_T;
 
     //ゲインとかけてみる
@@ -37,9 +38,32 @@ void pid_class::gain_setup(float new_p_gain, float new_i_gain, float new_d_gain)
     return;
 }
 
-//目標速度設定を変えたいときに
-void pid_class::terget_setup(float new_terget_rad){
-    terget_rad = new_terget_rad;
+//delta_t(ms)を変えたいときに
+void pid_class::delta_t_setup(float new_delta_t){
+    DELTA_T = new_delta_t;
 
     return;
+}
+
+//目標速度設定を変えたいときに
+void pid_class::terget_setup(float new_terget_rad){
+    max_terget_rad = new_terget_rad;
+
+    return;
+}
+
+//現在の目標速度設定(コントローラーの入力をここで目標速度に変換する)
+void pid_class::update_target_spd(float spd_rate){
+    current_target_rad = pid_class::max_terget_rad * spd_rate; //spd_rateは、コントローラーから得た入力を計算して、最高速度との割合で出す。
+}
+
+//エンコーダーの入力から、PWMの値を求める(この前に、delayを入れておくこととする)
+float pid_class::motor_calc(float current_data){
+    float rad_per_sec = 0.0f, result_motor_pwm = 0.0f;
+
+    rad_per_sec = re_convert_rad(current_data);
+
+    result_motor_pwm = pi_calc_rad(rad_per_sec);
+
+    return result_motor_pwm;
 }
