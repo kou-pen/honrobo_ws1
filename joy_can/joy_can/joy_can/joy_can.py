@@ -38,7 +38,7 @@ class JoyCan(Node):
         self.Ucan.send(msg1)
         print_text = "axis:{},{},{},{},{},{},{},{}"
         self.get_logger().info(print_text.format(*self.send_id1))
-        time.sleep(0.05)
+        time.sleep(0.02)
 
 def main(args=None):
     rclpy.init(args=args)
