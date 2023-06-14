@@ -65,5 +65,11 @@ float pid_class::motor_calc(float current_data){
 
     result_motor_pwm = pi_calc_rad(rad_per_sec);
 
+    if(result_motor_pwm < 0){
+        result_motor_pwm = 0;
+    }else if(result_motor_pwm > 65535){
+        result_motor_pwm = 65535;
+    }
+
     return result_motor_pwm;
 }
