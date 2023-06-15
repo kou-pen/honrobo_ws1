@@ -1,0 +1,4 @@
+[console_scripts]
+gui_pub = gui_test.gui_test:main
+gui_sub = gui_test.gui_recieve:main
+

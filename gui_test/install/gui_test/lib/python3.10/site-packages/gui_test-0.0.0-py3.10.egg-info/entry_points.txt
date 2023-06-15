@@ -1,0 +1,3 @@
+[console_scripts]
+gui_test = gui_test.gui_test:main
+
