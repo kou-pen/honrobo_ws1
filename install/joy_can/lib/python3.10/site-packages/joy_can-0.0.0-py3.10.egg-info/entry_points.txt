@@ -1,3 +1,0 @@
-[console_scripts]
-joy_can = joy_can.joy_can:main
-
