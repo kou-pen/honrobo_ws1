@@ -34,6 +34,7 @@ void pid_class::update_target_spd(float spd_rate){
 }
 
 //エンコーダーの入力から、PWMの値を求める(この前に、delayを入れておくこととする)
+//calc_mode...回転方向に合わせて設定
 float pid_class::motor_calc(float current_data, int calc_mode){
     float rad_per_sec = 0.0f, result_motor_pwm = 0.0f;
 
