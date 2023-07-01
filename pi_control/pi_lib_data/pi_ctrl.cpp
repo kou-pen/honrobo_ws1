@@ -1,13 +1,12 @@
 #include "pi_ctrl.hpp"
 
-
 //単位は(rad/s)
 float pid_class::pi_calc_rad(float current_rad){
     float result_p = 0, result_i = 0;
     float calc_p = 0;
     
     //計算
-    calc_p = pid_class::current_target_rad - current_rad;
+    calc_p = current_target_rad - current_rad;
     integral += (calc_p + before_p) / 2.0f * DELTA_T;
 
     //ゲインとかけてみる
@@ -29,41 +28,20 @@ float pid_class::re_convert_rad(float current_data){
     return rad_per_sec;
 }
 
-//ゲインを変えたいときに
-void pid_class::gain_setup(float new_p_gain, float new_i_gain, float new_d_gain){
-    gain_p = new_p_gain;
-    gain_i = new_i_gain;
-    gain_d = new_d_gain;
-
-    return;
-}
-
-//delta_t(ms)を変えたいときに
-void pid_class::delta_t_setup(float new_delta_t){
-    DELTA_T = new_delta_t;
-
-    return;
-}
-
-//目標速度設定を変えたいときに
-void pid_class::terget_setup(float new_terget_rad){
-    max_terget_rad = new_terget_rad;
-
-    return;
-}
-
 //現在の目標速度設定(コントローラーの入力をここで目標速度に変換する)
 void pid_class::update_target_spd(float spd_rate){
-    current_target_rad = pid_class::max_terget_rad * spd_rate; //spd_rateは、コントローラーから得た入力を計算して、最高速度との割合で出す。
+    current_target_rad = max_terget_rad * (spd_rate * 0.01f); //spd_rateは、コントローラーから得た入力を計算して、最高速度との割合で出す。
 }
 
 //エンコーダーの入力から、PWMの値を求める(この前に、delayを入れておくこととする)
-float pid_class::motor_calc(float current_data){
+float pid_class::motor_calc(float current_data, int calc_mode){
     float rad_per_sec = 0.0f, result_motor_pwm = 0.0f;
 
-    rad_per_sec = re_convert_rad(current_data);
+    current_data = pid_class::re_data_change(current_data, calc_mode);
 
-    result_motor_pwm = pi_calc_rad(rad_per_sec);
+    rad_per_sec = pid_class::re_convert_rad(current_data);
+
+    result_motor_pwm = pid_class::pi_calc_rad(rad_per_sec);
 
     if(result_motor_pwm < 0){
         result_motor_pwm = 0;
@@ -72,4 +50,21 @@ float pid_class::motor_calc(float current_data){
     }
 
     return result_motor_pwm;
+}
+
+float pid_class::re_data_change(float re_tim, int calc_mode){
+	if(calc_mode == 0){
+		if(re_tim > 32767){
+			re_tim -= 65535;
+		}
+	}else if(calc_mode == 1){
+		if(re_tim < 32767){
+			re_tim *= -1;
+		}else{
+			re_tim -= 65535;
+			re_tim *= -1;
+		}
+	}
+
+	return re_tim;
 }
