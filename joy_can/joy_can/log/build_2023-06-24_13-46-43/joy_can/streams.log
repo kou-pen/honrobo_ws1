@@ -1,0 +1,32 @@
+[0.402s] Invoking command in '/home/kohki/HONROBO_WS/joy_can/joy_can': PYTHONPATH=/home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/prefix_override:/home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/joy_can build --build-base /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build install --record /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/install.log --single-version-externally-managed
+[0.563s] running egg_info
+[0.563s] writing build/joy_can/joy_can.egg-info/PKG-INFO
+[0.563s] writing dependency_links to build/joy_can/joy_can.egg-info/dependency_links.txt
+[0.563s] writing entry points to build/joy_can/joy_can.egg-info/entry_points.txt
+[0.563s] writing requirements to build/joy_can/joy_can.egg-info/requires.txt
+[0.564s] writing top-level names to build/joy_can/joy_can.egg-info/top_level.txt
+[0.565s] reading manifest file 'build/joy_can/joy_can.egg-info/SOURCES.txt'
+[0.572s] writing manifest file 'build/joy_can/joy_can.egg-info/SOURCES.txt'
+[0.572s] running build
+[0.572s] running build_py
+[0.572s] copying joy_can/joy_can.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can
+[0.572s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/can_module
+[0.572s] copying joy_can/can_module/__init__.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/can_module
+[0.572s] copying joy_can/can_module/UsbCan.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/can_module
+[0.572s] running install
+[0.572s] running install_lib
+[0.573s] copying /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/joy_can.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can
+[0.573s] creating /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/can_module
+[0.573s] copying /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/can_module/__init__.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/can_module
+[0.573s] copying /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build/lib/joy_can/can_module/UsbCan.py -> /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/can_module
+[0.574s] byte-compiling /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/joy_can.py to joy_can.cpython-310.pyc
+[0.574s] byte-compiling /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/can_module/__init__.py to __init__.cpython-310.pyc
+[0.575s] byte-compiling /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can/can_module/UsbCan.py to UsbCan.cpython-310.pyc
+[0.575s] running install_data
+[0.575s] running install_egg_info
+[0.576s] removing '/home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can-0.0.0-py3.10.egg-info' (and everything under it)
+[0.576s] Copying build/joy_can/joy_can.egg-info to /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages/joy_can-0.0.0-py3.10.egg-info
+[0.577s] running install_scripts
+[0.590s] Installing joy_can script to /home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/joy_can
+[0.590s] writing list of installed files to '/home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/install.log'
+[0.607s] Invoked command in '/home/kohki/HONROBO_WS/joy_can/joy_can' returned '0': PYTHONPATH=/home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/prefix_override:/home/kohki/HONROBO_WS/joy_can/joy_can/install/joy_can/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/joy_can build --build-base /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/build install --record /home/kohki/HONROBO_WS/joy_can/joy_can/build/joy_can/install.log --single-version-externally-managed

@@ -1,11 +1,12 @@
 from setuptools import setup
 
 package_name = 'joy_can'
+submodules = 'joy_can'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],
+    packages=[package_name, submodules],
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
