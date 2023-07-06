@@ -5,6 +5,9 @@ float pid_class::pi_calc_rad(float current_rad){
     float result_p = 0, result_i = 0;
     float calc_p = 0;
     
+    //ここで直接値をいじっても、変化しなかった
+    //float current_target = 3.0f;
+
     //計算
     calc_p = current_target_rad - current_rad;
     integral += (calc_p + before_p) / 2.0f * DELTA_T;
@@ -30,11 +33,12 @@ float pid_class::re_convert_rad(float current_data){
 
 //現在の目標速度設定(コントローラーの入力をここで目標速度に変換する)
 void pid_class::update_target_spd(float spd_rate){
-    current_target_rad = max_terget_rad * (spd_rate * 0.01f); //spd_rateは、コントローラーから得た入力を計算して、最高速度との割合で出す。
+    current_target_rad = max_terget_rad * (spd_rate * 0.01f);
+    //spd_rateは、コントローラーから得た入力を計算して、最大入力との割合で出す予定
+    //現在は100.0fを代入
 }
 
 //エンコーダーの入力から、PWMの値を求める(この前に、delayを入れておくこととする)
-//calc_mode...回転方向に合わせて設定
 float pid_class::motor_calc(float current_data, int calc_mode){
     float rad_per_sec = 0.0f, result_motor_pwm = 0.0f;
 
@@ -44,15 +48,16 @@ float pid_class::motor_calc(float current_data, int calc_mode){
 
     result_motor_pwm = pid_class::pi_calc_rad(rad_per_sec);
 
-    if(result_motor_pwm < 0){
-        result_motor_pwm = 0;
-    }else if(result_motor_pwm > 65535){
-        result_motor_pwm = 65535;
+    if(result_motor_pwm < 0.0f){
+        result_motor_pwm = 0.0f;
+    }else if(result_motor_pwm > 65535.0f){
+        result_motor_pwm = 65535.0f;
     }
 
     return result_motor_pwm;
 }
 
+//ここが怪しいのかな
 float pid_class::re_data_change(float re_tim, int calc_mode){
 	if(calc_mode == 0){
 		if(re_tim > 32767){
