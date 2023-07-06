@@ -23,8 +23,8 @@ class JoyCan(Node):
     def callback(self,joy):
         self.send_id1[0] = joy.axes[0] * 127 + 128
         self.send_id1[1] = joy.axes[1] * 127 + 128
-        self.send_id1[2] = joy.axes[3] * 127 + 128
-        self.send_id1[3] = joy.axes[4] * 127 + 128
+        self.send_id1[2] = joy.axes[3] * -127 + 128
+        self.send_id1[3] = joy.axes[4] * -127 + 128
         self.send_id1[4] = joy.axes[2] * 127 + 128
         self.send_id1[5] = joy.axes[5] * 127 + 128
         self.send_id1[6] = joy.axes[6] + 1
