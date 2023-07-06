@@ -1,3 +1,6 @@
+### 使うときに適宜コメントアウト外してね
+### CANの有無とコントローラーの種類によって使い分けてね
+
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Joy
