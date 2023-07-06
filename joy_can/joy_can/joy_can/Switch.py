@@ -25,7 +25,7 @@ class SwitchStatus():
         self.__max_status = max_status
         
     def toggle_status(self,switch_num):
-        if self.__button_status[switch_num] == self.__max_status: 
+        if self.__button_status[switch_num] >= self.__max_status: 
             self.__button_status[switch_num] = self.__min_status
         else:
             self.__button_status[switch_num] += 1
