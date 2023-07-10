@@ -10,11 +10,11 @@ private:
     const float pi = 3.1415926f;
 
     //計算時使用の定数
-    float gain_p = 1000.0f;
+    float gain_p = 2000.0f;
     float gain_i = 5.0f;
     float gain_d = 0.0f; //未実装のD制御
     float DELTA_T = 0.01f;
-    float max_terget_rad = 9.0f;
+    float max_terget_rad = 20.0f;
 
     float current_target_rad = 0.0f;
     float before_p = 0.0f; //前回のエラー値
