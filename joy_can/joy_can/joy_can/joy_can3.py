@@ -14,16 +14,16 @@ import time
 class JoyCan(Node):
     node_name = 'joy_can'
     topic_name = 'joy'
-    # UCan = UsbCan()
+    Ucan = UsbCan()
     t_switch = ToggleSwitch()
     
     def __init__(self) -> None:
         super().__init__(self.node_name)
         self.sub = self.create_subscription(Joy,self.topic_name,self.callback,10)
-        # self.Ucan.open()
+        self.Ucan.open()
         self.get_logger().info("setup done")
     def __del__(self):
-        # self.Ucan.close()
+        self.Ucan.close()
         pass
         
         
@@ -32,18 +32,18 @@ class JoyCan(Node):
     ###Potable-PC
         # recaluculated_joy[0] = joy.axes[0] * 127 + 128
         # recaluculated_joy[1] = joy.axes[1] * 127 + 128
-        # recaluculated_joy[2] = joy.axes[3] * 127 + 128
-        # recaluculated_joy[3] = joy.axes[4] * 127 + 128
+        # recaluculated_joy[2] = joy.axes[3] * -127 + 128
+        # recaluculated_joy[3] = joy.axes[4] * -127 + 128
         # recaluculated_joy[4] = joy.axes[2] * 127 + 128
         # recaluculated_joy[5] = joy.axes[5] * 127 + 128
         # recaluculated_joy[6] = joy.axes[6] + 1
         # recaluculated_joy[7] = joy.axes[7] + 1
         
     ###F310
-        recaluculated_joy[0] = joy.axes[0] * 127 + 128 #left-horizontal
-        recaluculated_joy[1] = joy.axes[1] * 127 + 128 #left-vertical
-        recaluculated_joy[2] = joy.axes[2] * 127 + 128 #right-horizontal
-        recaluculated_joy[3] = joy.axes[3] * 127 + 128 #right-vertical
+        recaluculated_joy[0] = joy.axes[0] * -127 + 128 #left-horizontal
+        recaluculated_joy[1] = joy.axes[1] * -127 + 128 #left-vertical
+        recaluculated_joy[2] = joy.axes[3] * -127 + 128 #right-horizontal
+        recaluculated_joy[3] = joy.axes[2] * -127 + 128 #right-vertical
         recaluculated_joy[4] = joy.axes[4] + 1 #hat_vertical
         recaluculated_joy[5] = joy.axes[5] + 1 #hat_horizontal
         recaluculated_joy[6] = 0 #none
@@ -79,11 +79,13 @@ class JoyCan(Node):
         other_msg_data = status.get_status()
         tx_msg2 = msg2.update_message(other_msg_data)
         
-        # self.UCan.send(tx_msg1)
-        # time.sleep(0.005)
-        # self.UCan.send(tx_msg2)
-        # time.sleep(0.005)
+        self.Ucan.send(tx_msg1)
+        time.sleep(0.005)
+        self.Ucan.send(tx_msg2)
+        time.sleep(0.005)
         
+        # print(tx_msg1.data)
+        # print(tx_msg2.data)
         print_text = "axis:{:0=3},{:0=3},{:0=3},{:0=3},{:0=3},{:0=3},{:0=3},{:0=3}\ndata:{},{},{},{},{},{},{},{}"
         self.get_logger().info(print_text.format(*tx_msg1.data,*tx_msg2.data))
         
