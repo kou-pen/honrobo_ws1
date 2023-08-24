@@ -48,8 +48,10 @@ def can_trans():
         print(msg_data)
         tx_msg = msg_class.update_message(msg_data)
         Ucan.send(tx_msg)
-        time.sleep(10)   
+        time.sleep(0.001)   
         
+        
+#thread
 try:
     th1 = threading.Thread(target=key_monitor)
     th2 = threading.Thread(target=can_trans)
