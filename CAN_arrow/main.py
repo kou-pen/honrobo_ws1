@@ -20,7 +20,7 @@ pygame.display.set_caption("key board event")
 Ucan = UsbCan()
 Ucan.open()
 
-msg_class = UseMessage(1) #id=1
+msg_class = UseMessage(3) #id=1
 msg_data = [1] * 8
 
 def key_monitor():
@@ -34,12 +34,19 @@ def key_monitor():
                 elif event.key == K_UP:
                     print("up")
                     msg_data[0] = 2
+                elif event.key == K_LEFT:
+                    print("left")
+                    msg_data[1] = 0
+                elif event.key == K_RIGHT:
+                    print("right")
+                    msg_data[1] = 2
                 elif event.key  == K_ESCAPE:
                     pygame.quit()
                     Ucan.close()
                     sys.exit()
             if event.type == KEYUP:
                 msg_data[0] =  1
+                msg_data[1] =  1
             pygame.display.update()
             
             
